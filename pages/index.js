@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <Header title="This web page is currently under construction" />
         <p className="description">
-          By the <a href="https://sites.utexas.edu/uil/">Urban Information Lab</a> and the <a href="https://sites.utexas.edu/hcrl/">Human Centered Robotics Group</a> at the <a href="https://www.utexas.edu/">University of Texas at Austin.</a>
+          by the <a href="https://sites.utexas.edu/uil/">Urban Information Lab</a> and the <a href="https://sites.utexas.edu/hcrl/">Human Centered Robotics Group</a> at the <a href="https://www.utexas.edu/">University of Texas at Austin.</a>
         </p>
       </main>
 
