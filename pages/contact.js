@@ -8,7 +8,7 @@ export default function Contact() {
     <div>
       <Head>
         <title>Bumpybot | Urban Information Lab</title>
-        <link rel="icon" href="/UrbanInfoLabIcon.png" />
+        <link rel="icon" href="/BumpyBotLogo.jpg" />
       </Head>
 
       <header className='fixed w-screen z-50'>
