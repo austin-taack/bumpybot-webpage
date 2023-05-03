@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Footer from '@components/Footer'
 import Nav from '@components/Nav'
-import About from '@components/About'
+import ContactCard from '@components/ContactCard'
 
-export default function Home() {
+export default function Contact() {
   return (
     <div>
       <Head>
@@ -14,15 +14,15 @@ export default function Home() {
       <header className='fixed w-screen z-50'>
         <Nav navigation={
           [
-            { name: 'About', href: '/', current: true },
+            { name: 'About', href: '/', current: false },
             { name: 'Team', href: '/team', current: false },
-            { name: 'Contact', href: '/contact', current: false },
+            { name: 'Contact', href: '/contact', current: true },
           ]
         }/>
       </header>
 
       <main>
-        <About />
+        <ContactCard />
         <Footer />
       </main>
     </div>
