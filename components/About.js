@@ -7,8 +7,8 @@ Adapted from code at https://tailwindui.com/components/marketing/sections/header
  */}
 function Header() {
   const links = [
-    { name: 'Urban Information Lab', href: 'https://sites.utexas.edu/uil/main/' },
     { name: 'Human Centered Robotics Lab', href: 'https://sites.utexas.edu/hcrl/' },
+    { name: 'Urban Information Lab', href: 'https://sites.utexas.edu/uil/main/' },
     { name: 'University of Texas at Austin', href: 'https://www.utexas.edu/' },
   ]
   const stats = [
@@ -57,7 +57,7 @@ function Header() {
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Introducing BumpyBot</h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-          Learn about BumpyBot, a new domestic robot for your family developed by the Urban Information Lab and the Human Centered Robotics Lab at UT Austin.
+          Learn about BumpyBot, a new domestic robot for your family developed by the Human Centered Robotics Lab and the Urban Information Lab at UT Austin.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">

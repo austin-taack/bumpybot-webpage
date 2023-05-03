@@ -32,18 +32,20 @@ export default function Nav(props) {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <a href="https://sites.utexas.edu/uil/main/">
-                    <img
-                      className="block h-12 w-auto lg:hidden"
-                      src="/UrbanInfoLabLogo.png"
-                      alt="Urban Information Lab"
-                    />
-                    <img
-                      className="hidden h-12 w-auto lg:block"
-                      src="/UrbanInfoLabLogo.png"
-                      alt="Urban Information Lab"
-                    />
-                  </a>
+                  <Link href="/">
+                    <button>
+                      <img
+                        className="block h-12 w-auto lg:hidden"
+                        src="/BumpyBotLogo.jpg"
+                        alt="Bumpy Bot Logo"
+                      />
+                      <img
+                        className="hidden h-12 w-auto lg:block"
+                        src="/BumpyBotLogo.jpg"
+                        alt="Bumpy Bot Logo"
+                      />
+                    </button>
+                  </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
