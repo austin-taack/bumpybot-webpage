@@ -8,7 +8,7 @@ export default function Team() {
       <div>
         <Head>
           <title>Bumpybot | Urban Information Lab</title>
-          <link rel="icon" href="/BumpyBotLogo.jpg" />
+          <link rel="icon" href="images/BumpyBotLogoSmall.png" />
         </Head>
   
         <header className='fixed w-screen z-50'>

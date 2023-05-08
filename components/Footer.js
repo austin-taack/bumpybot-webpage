@@ -12,12 +12,12 @@ export default function Footer() {
             <div class="md:flex md:justify-between">
               <div class="mb-6 md:mb-0">
                 <a href="https://sites.utexas.edu/hcrl/" class="flex items-center">
-                    <img src="HumanCenteredRoboticsLogo.png" class="h-10 mr-3" alt="HCRL Logo" />
+                    <img src="images/HumanCenteredRoboticsLogo.png" class="h-10 mr-3" alt="HCRL Logo" />
                 </a>
               </div>
               <div class="mb-6 md:mb-0">
                 <a href="https://sites.utexas.edu/uil/main/" class="flex items-center">
-                     <img src="UrbanInfoLabLogo.png" class="h-10 mr-3" alt="UIL Logo" />
+                     <img src="images/UrbanInfoLabLogo.png" class="h-10 mr-3" alt="UIL Logo" />
                 </a>
               </div>
               <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

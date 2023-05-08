@@ -1,0 +1,6 @@
+# Configuration file for CMS
+# Code from https://decapcms.org/docs/add-to-your-site/
+
+backend:
+  name: git-gateway
+  branch: master

@@ -2,13 +2,13 @@ const people = [
     {
       name: 'Dr. Junfeng Jiao',
       role: 'Director - Urban Information Lab.',
-      imageUrl: '/JunfengJiao.jpg',
+      imageUrl: 'images/JunfengJiao.jpg',
       websiteUrl: 'https://soa.utexas.edu/faculty/junfeng-jiao',
     },
     {
         name: 'Dr. Luis Sentis',
         role: 'Director - Human Centered Robotics Lab',
-        imageUrl: '/LuisSentis.jpg',
+        imageUrl: 'images/LuisSentis.jpg',
         websiteUrl: 'https://www.ae.utexas.edu/people/faculty/faculty-directory/sentis',
       },
   ]

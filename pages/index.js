@@ -8,7 +8,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Bumpybot | Urban Information Lab</title>
-        <link rel="icon" href="/BumpyBotLogo.jpg" />
+        <link rel="icon" href="images/BumpyBotLogoSmall.png" />
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Head>
 
       <header className='fixed w-screen z-50'>

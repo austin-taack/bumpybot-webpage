@@ -36,12 +36,12 @@ export default function Nav(props) {
                     <button>
                       <img
                         className="block h-12 w-auto lg:hidden"
-                        src="/BumpyBotLogo.jpg"
+                        src="images/BumpyBotLogo.jpg"
                         alt="Bumpy Bot Logo"
                       />
                       <img
                         className="hidden h-12 w-auto lg:block"
-                        src="/BumpyBotLogo.jpg"
+                        src="images/BumpyBotLogo.jpg"
                         alt="Bumpy Bot Logo"
                       />
                     </button>
