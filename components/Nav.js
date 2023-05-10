@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faYoutube, faTwitter, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { attributes } from '../content/nav.md'
 import Link from 'next/link'
 
 function classNames(...classes) {
@@ -12,9 +12,11 @@ function classNames(...classes) {
 Displays the navbar
 Adapted from code at https://tailwindui.com/components/application-ui/navigation/navbars
  */}
-export default function Nav(props) {
+export default function Nav({page}) {
+  let { logo, navigation, socials } = attributes;
+
   return (
-    <Disclosure as="Nav" className="bg-white shadow-md">
+    <Disclosure as="nav" className="bg-white shadow-md">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -36,12 +38,12 @@ export default function Nav(props) {
                     <button>
                       <img
                         className="block h-12 w-auto lg:hidden"
-                        src="images/BumpyBotLogo.jpg"
+                        src={logo}
                         alt="Bumpy Bot Logo"
                       />
                       <img
                         className="hidden h-12 w-auto lg:block"
-                        src="images/BumpyBotLogo.jpg"
+                        src={logo}
                         alt="Bumpy Bot Logo"
                       />
                     </button>
@@ -49,15 +51,14 @@ export default function Nav(props) {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {props.navigation.map((item) => (
-                      <Link href={item.href}>
+                    {navigation.map((item) => (
+                      <Link key={item.name} href={item.href}>
                         <button
-                          key={item.name}
                           className={classNames(
-                            item.current ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-700 hover:text-white',
+                            (item.name === page) ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-700 hover:text-white',
                             'rounded-md px-3 py-3 text-sm font-medium'
                           )}
-                          aria-current={item.current ? 'page' : undefined}
+                          aria-current={(item.name === page) ? 'page' : undefined}
                         >
                           {item.name}
                         </button>
@@ -66,54 +67,32 @@ export default function Nav(props) {
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href="https://twitter.com/urbaninfolab">
-                  <button
-                    type="button"
-                    className="text-slate-500 hover:text-slate-600 focus:text-black hidden sm:block"
-                  >
-                    <span className="sr-only">Twitter</span>
-                    <FontAwesomeIcon icon={faTwitter} className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                </a>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <a href="https://www.youtube.com/channel/UC0wpzr9dEZeG-uZKBxS3PWw">
-                  <button
-                    type="button"
-                    className="text-slate-500 hover:text-slate-600 focus:text-black hidden sm:block"
-                    
-                  >
-                    <span className="sr-only">Youtube</span>
-                    <FontAwesomeIcon icon={faYoutube} className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                </a>
-              </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"> 
-                <a href="https://github.com/urbaninfolab">
-                  <button
-                    type="button"
-                    className="text-slate-500 hover:text-slate-600 focus:text-black hidden sm:block"
-                  >
-                    <span className="sr-only">Github</span>
-                    <FontAwesomeIcon icon={faGithub} className="h-6 w-6" aria-hidden="true" />
-                  </button>
-                </a>
-              </div>
+              {socials.map((social) => (
+                <div key={social.name} className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                  <a href={social.href}>
+                    <button
+                      type="button"
+                      className="text-slate-500 hover:text-slate-600 focus:text-black hidden sm:block"
+                    >
+                      <span className="sr-only">{social.name}</span>
+                      <FontAwesomeIcon icon={"fa-brands fa-" + social.fa_icon} className="h-6 w-6" aria-hidden="true" />
+                    </button>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
-
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {props.navigation.map((item) => (
+              {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-700 hover:text-white',
+                    (item.name === page) ? 'bg-slate-900 text-white' : 'text-slate-600 hover:bg-slate-700 hover:text-white',
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
-                  aria-current={item.current ? 'page' : undefined}
+                  aria-current={(item.name === page) ? 'page' : undefined}
                 >
                   <Link href={item.href}>{item.name}</Link>
                 </Disclosure.Button>

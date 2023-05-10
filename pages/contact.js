@@ -4,27 +4,24 @@ import Nav from '@components/Nav'
 import ContactCard from '@components/ContactCard'
 
 export default function Contact() {
+  const page = "Contact"
+
   return (
     <div>
       <Head>
-        <title>Bumpybot | Urban Information Lab</title>
+        <title>Contact | BumpyBot</title>
         <link rel="icon" href="images/BumpyBotLogoSmall.png" />
       </Head>
 
       <header className='fixed w-screen z-50'>
-        <Nav navigation={
-          [
-            { name: 'About', href: '/', current: false },
-            { name: 'Team', href: '/team', current: false },
-            { name: 'Contact', href: '/contact', current: true },
-          ]
-        }/>
+        <Nav page={page} />
       </header>
 
       <main>
         <ContactCard />
-        <Footer />
       </main>
+
+      <Footer />
     </div>
   )
 }

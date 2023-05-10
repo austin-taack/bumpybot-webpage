@@ -4,26 +4,23 @@ import Nav from '@components/Nav'
 import TeamCard from '@components/TeamCard'
 
 export default function Team() {
+    const page = "Team"
+    
     return (
       <div>
         <Head>
-          <title>Bumpybot | Urban Information Lab</title>
+          <title>Team | BumpyBot</title>
           <link rel="icon" href="images/BumpyBotLogoSmall.png" />
         </Head>
   
         <header className='fixed w-screen z-50'>
-          <Nav navigation={
-            [
-                { name: 'About', href: '/', current: false },
-                { name: 'Team', href: '/team', current: true },
-                { name: 'Contact', href: '/contact', current: false },
-            ]
-          }/>
+          <Nav page={page} />
         </header>
         <main>
           <TeamCard />
-          <Footer />
         </main>
+
+        <Footer />
       </div>
     )
   }

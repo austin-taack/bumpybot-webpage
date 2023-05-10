@@ -2,5 +2,147 @@
 # Code from https://decapcms.org/docs/add-to-your-site/
 
 backend:
-  name: git-gateway
+  name: test-repo
   branch: master
+media_folder: "public/images"
+public_folder: "/images"
+site_url: https://www.bumpybot.com
+collections:
+  - name: "components"
+    label: "Components"
+    files:
+      - label: "About"
+        name: "about"
+        file: "content/home.md"
+        fields:
+          - { label: "Hero Section Title", name: "title", widget: "string" }
+          - { label: "Description", name: "page_description", widget: "string" }
+          - {
+              label: "Background Image",
+              name: "background_img",
+              widget: "image",
+            }
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+          - label: "Main Features"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Name", name: "name", widget: "string" }
+          - {
+              label: "About Section Title",
+              name: "about_section_title",
+              widget: "string",
+            }
+          - {
+              label: "About Section Subtitle",
+              name: "about_section_subtitle",
+              widget: "string",
+            }
+          - { label: "Side Image", name: "side_img", widget: "string" }
+          - {
+              label: "About Section Description",
+              name: "about_description",
+              widget: "string",
+            }
+          - { label: "Value", name: "value", widget: "string" }
+          - { label: "First Paragraph", name: "paragraph1", widget: "markdown" }
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - {
+                  label: "Icon Name (go to https://fontawesome.com/search?m=free&o=r and find an icon)",
+                  name: "fa_icon",
+                  widget: "string",
+                }
+          - {
+              label: "Second Paragraph",
+              name: "paragraph2",
+              widget: "markdown",
+            }
+          - {
+              label: "Section Header",
+              name: "section_header",
+              widget: "string",
+            }
+          - { label: "Third Paragraph", name: "paragraph3", widget: "markdown" }
+      - label: "Team"
+        name: "team"
+        file: "content/team.md"
+        fields:
+          - { label: "Header", name: "header", widget: "string" }
+          - { label: "Description", name: "description", widget: "markdown" }
+          - label: "People"
+            name: "people"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+              - { label: "Portrait", name: "imageUrl", widget: "image" }
+              - {
+                  label: "Personal Website",
+                  name: "websiteUrl",
+                  widget: "string",
+                }
+      - label: "NavBar"
+        name: "navbar"
+        file: "content/nav.md"
+        fields:
+          - { label: "Logo", name: "logo", widget: "image" }
+          - label: "Navigation Buttons"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Relative Link", name: "href", widget: "string" }
+          - label: "Social Media Buttons"
+            name: "socials"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - {
+                  label: "Icon Name (go to https://fontawesome.com/search?o=r&m=free&f=brands and find an icon",
+                  name: "fa_icon",
+                  widget: "string",
+                }
+              - {
+                  label: "Link to Social Media",
+                  name: "href",
+                  widget: "string",
+                }
+      - label: "Footer"
+        name: "footer"
+        file: "content/footer.md"
+        fields:
+          - label: "Logos"
+            name: "logos"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "img", widget: "image" }
+              - { label: "Site Link", name: "href", widget: "string" }
+          - label: "Link Sets"
+            name: "link_sets"
+            widget: "list"
+            fields:
+              - { label: "Type", name: "type", widget: "string" }
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+                  - {
+                      label: "This link takes the user to an external website:",
+                      name: "external",
+                      widget: "boolean",
+                      default: true,
+                    }
