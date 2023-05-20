@@ -50,8 +50,12 @@ collections:
               name: "about_description",
               widget: "string",
             }
-          - { label: "Value", name: "value", widget: "string" }
-          - { label: "First Paragraph", name: "paragraph1", widget: "markdown" }
+          - {
+              label: "First Paragraph",
+              name: "paragraph1",
+              widget: "markdown",
+              required: false,
+            }
           - label: "Features"
             name: "features"
             widget: "list"
@@ -67,19 +71,31 @@ collections:
               label: "Second Paragraph",
               name: "paragraph2",
               widget: "markdown",
+              required: false,
             }
           - {
               label: "Section Header",
               name: "section_header",
               widget: "string",
+              required: false,
             }
-          - { label: "Third Paragraph", name: "paragraph3", widget: "markdown" }
+          - {
+              label: "Third Paragraph",
+              name: "paragraph3",
+              widget: "markdown",
+              required: false,
+            }
       - label: "Team"
         name: "team"
         file: "content/team.md"
         fields:
           - { label: "Header", name: "header", widget: "string" }
-          - { label: "Description", name: "description", widget: "markdown" }
+          - {
+              label: "Description",
+              name: "description",
+              widget: "markdown",
+              required: false,
+            }
           - label: "People"
             name: "people"
             widget: "list"

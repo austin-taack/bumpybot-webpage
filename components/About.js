@@ -6,6 +6,7 @@ import { attributes } from '../content/home.md'
 Explains the main information about BumpyBot (the purple section)
 Adapted from code at https://tailwindui.com/components/marketing/sections/header
  */
+
 function Hero() {
   let { title, page_description, links, stats, background_img } = attributes
   
@@ -49,21 +50,25 @@ function Hero() {
           <p className="mt-6 text-lg leading-8 text-gray-300">{page_description}</p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            {links.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
-              </a>
-            ))}
-          </div>
-          <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.name} className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{stat.value}</dd>
-              </div>
-            ))}
-          </dl>
+          {(Array.isArray(links) && links.length > 0) && (
+            <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+              {links.map((link) => (
+                <a key={link.name} href={link.href}>
+                  {link.name} <span aria-hidden="true">&rarr;</span>
+                </a>
+              ))}
+            </div>
+          )}
+          {(Array.isArray(stats) && stats.length > 0) && (
+            <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+              {stats.map((stat) => (
+                <div key={stat.name} className="flex flex-col-reverse">
+                  <dt className="text-base leading-7 text-gray-300">{stat.name}</dt>
+                  <dd className="text-2xl font-bold leading-9 tracking-tight text-white">{stat.value}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
         </div>
       </div>
     </div>
@@ -126,14 +131,16 @@ function Description() {
           <div className="lg:pr-4">
             <div className="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg">
               <p>{paragraph1}</p>
-              <ul role="list" className="mt-8 space-y-8 text-gray-600">
-                {features.map((feature) => (
-                  <li key={feature.name} className="flex gap-x-3">
-                    <FontAwesomeIcon icon={feature.fa_icon} className="mt-1 h-5 w-5 flex-none text-[#dd573c]" aria-hidden="true" />
-                    <span><strong className="font-semibold text-gray-900">{feature.name}.</strong> {feature.description}</span>
-                  </li>
-                ))}
-              </ul>
+              {(Array.isArray(features) && features.length > 0) && (
+                <ul role="list" className="mt-8 space-y-8 text-gray-600">
+                  {features.map((feature) => (
+                    <li key={feature.name} className="flex gap-x-3">
+                      <FontAwesomeIcon icon={"fa-solid fa-" + feature.fa_icon} className="mt-1 h-5 w-5 flex-none text-[#dd573c]" aria-hidden="true" />
+                      <span><strong className="font-semibold text-gray-900">{feature.name}.</strong> {feature.description}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               <p className="mt-6">{paragraph2}</p>
               <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-900">{section_header}</h2>
               <p className="mt-6">{paragraph3}</p>

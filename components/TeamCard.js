@@ -9,22 +9,24 @@ export default function Example() {
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{header}</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
         </div>
-        <ul role="list" className="grid gap-x-20 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-          {people.map((person) => (
-            <li key={person.name}>
-              {/* Code for team cards modified from https://flowbite.com/docs/components/card/ */}
-              <a href={person.websiteUrl}>
-                <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-slate-100">
-                  <img className="rounded-t-lg object-cover w-full h-80" src={person.imageUrl} alt="" />
-                  <div className="p-5">
-                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{person.name}</h5>
-                    <p className="mb-3 font-normal text-gray-700">{person.role}</p>
+        {(Array.isArray(people) && people.length > 0) && (
+          <ul role="list" className="grid gap-x-20 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            {people.map((person) => (
+              <li key={person.name}>
+                {/* Code for team cards modified from https://flowbite.com/docs/components/card/ */}
+                <a href={person.websiteUrl}>
+                  <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow hover:bg-slate-100">
+                    <img className="rounded-t-lg object-cover w-full h-80" src={person.imageUrl} alt="" />
+                    <div className="p-5">
+                      <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">{person.name}</h5>
+                      <p className="mb-3 font-normal text-gray-700">{person.role}</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </li>
-          ))}
-        </ul>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )
