@@ -1,6 +1,6 @@
 ---
 header: Meet the team.
-description: BumpyBot is a collaboration between the Urban Information Lab and the Human Centered Robotics Lab.
+description: ""
 people:
   - name: Dr. Junfeng Jiao
     role: Director - Urban Information Lab.
