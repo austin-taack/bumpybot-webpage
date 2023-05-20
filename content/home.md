@@ -1,16 +1,18 @@
 ---
 title: Introducing BumpyBot
-page_description: Learn about BumpyBot, a new domestic robot for your family developed by the Human Centered Robotics Lab and the Urban Information Lab at UT Austin.
+page_description: Learn about BumpyBot, a new domestic robot for your family.
 background_img: ../images/BumpyBot.png
-links:
-stats:
+links: null
+stats: null
 about_section_title: BumpyBot
 about_section_subtitle: A New Domestic Transporter
 side_img: /images/FrogBot.jpg
-about_description: BumpyBot is a mobile carrier capable of intelligently navigating indoor environments, avoiding collisions, and performing autonomous household tasks.
-paragraph1:
-features:
-paragraph2:
-section_header:
-paragraph3:
+about_description: BumpyBot is a mobile carrier capable of intelligently
+  navigating indoor environments, avoiding collisions, and performing autonomous
+  household tasks.
+paragraph1: null
+features: null
+paragraph2: null
+section_header: null
+paragraph3: null
 ---
